@@ -8,7 +8,6 @@ steps = [0 for x in range (0, n + 1)]
 steps[0] = 1
 for x in range (0, len(coins)):
     if coins[x] <= n:
-        for y in range (steps[coins[x]], n + 1):
-            if y >= coins[x]:
-                steps[y] = steps[y] + steps[y - coins[x]]
+        for y in range (coins[x], n + 1):
+            steps[y] = steps[y] + steps[y - coins[x]]
 print steps[n]
